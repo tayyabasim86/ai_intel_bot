@@ -37,18 +37,33 @@ def _ensure_headers(ws):
 def open_sheet(sheet_id: str | None = None, tab: str | None = None):
     gc = _auth_client()
     sheet_id = sheet_id or os.getenv("SHEET_ID") or SHEET_ID_DEFAULT
-    tab      = tab or os.getenv("SHEET_TAB") or SHEET_TAB_DEFAULT
+    tab = (tab or os.getenv("SHEET_TAB") or SHEET_TAB_DEFAULT or "Sheet1").strip()
+
     print("[DEBUG] Using SHEET_ID:", sheet_id)
     print("[DEBUG] Using SHEET_TAB:", tab)
+
     sh = gc.open_by_key(sheet_id)
     print("[INFO] Opened spreadsheet title ->", sh.title)
-    try:
-        ws = sh.worksheet(tab)
-        print(f"[INFO] Using worksheet -> {tab}")
-    except Exception:
-        ws = sh.add_worksheet(title=tab, rows=200, cols=len(REQUIRED_HEADERS))
+
+    # Robust: check existing worksheets first (avoid false negatives)
+    ws = None
+    for w in sh.worksheets():
+        if w.title.strip() == tab:
+            ws = w
+            break
+
+    if ws is None:
+        try:
+            ws = sh.add_worksheet(title=tab, rows=200, cols=len(REQUIRED_HEADERS))
+            print(f"[INFO] Created worksheet -> {tab}")
+        except Exception as e:
+            print("[WARN] add_worksheet failed, trying to fetch by title:", e)
+            # If race or API quirk, fetch by title again
+            ws = sh.worksheet(tab)
+
     _ensure_headers(ws)
     return ws
+
 
 def existing_keys(ws) -> set:
     try:
