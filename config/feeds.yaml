@@ -4,3 +4,27 @@ feeds:
   - https://www.anthropic.com/news.xml
   - https://huggingface.co/blog/feed.xml
   - https://export.arxiv.org/rss/cs.AI
+  - https://openreview.net/search?content=all&group=all&source=all&term=iclr
+  - https://openreview.net/search?content=all&group=all&source=all&term=neurips
+  - https://aclanthology.org/search/?q=nlp
+  - https://paperswithcode.com/trends
+  - https://paperswithcode.com/task/text-to-speech-synthesis
+  - https://www.semanticscholar.org/search?year%5B0%5D=2020&year%5B1%5D=2025&fos%5B0%5D=computer-science&q=AI&sort=relevance
+  - https://openai.com/research/index/
+  - https://deepmind.google/research//
+  - https://www.anthropic.com/news
+  - https://www.meta.ai/#feed
+  - https://research.google/pubs/?search=ai&
+  - https://research.google/blog/?search=ai&
+  - https://cohere.com/research/papers
+  - https://cohere.com/blog?search=ai
+  - https://mistral.ai/news?category=Research
+  - https://stability.ai/news
+  - https://stability.ai/research
+  - https://huggingface.co/openai/gpt-oss-120b
+  - https://www.producthunt.com/search?q=ai
+  - https://www.producthunt.com/topics/artificial-intelligence
+  - https://hn.algolia.com/?q=ai
+  - https://www.reddit.com/search/?q=ai&cId=9f7b3e53-ea8b-4c82-b315-4bb6c1b6fef3&iId=b77acf32-f7d2-4881-900b-4b40aa86d118
+  - https://www.linkedin.com/in/ben-tossell-70453537/?originalSubdomain=uk
+  - https://www.superhuman.ai/archive?q=ai 
