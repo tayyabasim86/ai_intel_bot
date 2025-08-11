@@ -1,0 +1,8 @@
+feedparser
+requests
+beautifulsoup4
+google-auth
+gspread
+gTTS
+PyYAML
+google-generativeai

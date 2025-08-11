@@ -1,0 +1,6 @@
+feeds:
+  - https://openai.com/blog/rss.xml
+  - https://ai.googleblog.com/feeds/posts/default
+  - https://www.anthropic.com/news.xml
+  - https://huggingface.co/blog/feed.xml
+  - https://export.arxiv.org/rss/cs.AI
